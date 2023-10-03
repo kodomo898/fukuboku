@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_22" data-name="長方形 22" width="21.863" height="28.514" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="tel" transform="translate(-383 -5130)">
+    <g id="グループ_14" data-name="グループ 14" transform="translate(402.069 5145.358)">
+      <g id="グループ_13" data-name="グループ 13" clip-path="url(#clip-path)">
+        <path id="パス_2" data-name="パス 2" d="M1.955,1.209C0,2.479-.389,6.451.35,9.688a29.24,29.24,0,0,0,3.866,9.087,30.366,30.366,0,0,0,6.72,7.236c2.654,2,6.438,3.264,8.4,1.993a9.922,9.922,0,0,0,2.53-2.713L20.81,23.668l-2.894-4.463c-.215-.332-1.564-.029-2.249.36a6.524,6.524,0,0,0-1.776,1.929c-.634.366-1.165,0-2.274-.509-1.363-.627-2.9-2.576-4.116-4.341-1.114-1.834-2.268-4.028-2.285-5.528C5.2,9.9,5.087,9.262,5.679,8.832A6.525,6.525,0,0,0,8.165,8C8.8,7.53,9.625,6.423,9.41,6.091L6.516,1.628,5.463.005a9.923,9.923,0,0,0-3.509,1.2" transform="translate(0 0)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="楕円形_2" data-name="楕円形 2" transform="translate(383 5130)" fill="none" stroke="#fff" stroke-width="1">
+      <circle cx="30" cy="30" r="30" stroke="none"/>
+      <circle cx="30" cy="30" r="29.5" fill="none"/>
+    </g>
+  </g>
+</svg>

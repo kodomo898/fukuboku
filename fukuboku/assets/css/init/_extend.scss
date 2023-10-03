@@ -1,0 +1,247 @@
+@charset "UTF-8";
+@import "variable";
+@import "mixin";
+
+%extend_module_manual {
+  /*
+    ------------------------------------
+    ####################################
+     extend_module
+     ※ extend用共通モジュール
+    ####################################
+    ------------------------------------
+  */
+}
+
+%ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+}
+
+%hidetext {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+// Form-reset
+
+%form-reset {
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="submit"],
+  input[type="number"],
+  button,
+  textarea,
+  select {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    font-weight: normal;
+    font-size: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  ::placeholder {
+    color: #ccc;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  input[type="checkbox"], input[type="radio"] {
+    display: none;
+  }
+
+  input[type="checkbox"], input[type="radio"] {
+    display: none;
+
+    & + label {
+      cursor: pointer;
+    }
+  }
+}
+
+
+%form {
+  @include fo-go;
+  font-size: 1.4rem;
+  .select {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+    max-width: 500px;
+    background: #f3f3f3;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    &:before {
+      @include content(7px, 7px);
+      border-right: 1px solid $selectArrowColor;
+      border-bottom: 1px solid $selectArrowColor;
+      @include trans-y(45);
+      top: 45%;
+      right: 20px;
+      z-index: 0;
+      cursor: pointer;
+    }
+
+    select {
+      width: 100%;
+      height: 100%;
+      padding: 10px 30px 10px 20px;
+      color: $black1;
+      position: relative;
+      z-index: 1;
+      line-height: 1;
+      box-sizing: border-box;
+      @include fo-go;
+    }
+  }
+
+  input[type="text"],input[type="email"],input[type="tel"],input[type="number"]{
+    //border: 1px solid $inputBorder;
+    @include fo-go;
+
+    color: $black1;
+    box-sizing: border-box;
+    padding:10px 20px;
+    display: block;
+    width: 100%;
+    background: #f3f3f3;
+    border: 1px solid #dedede;
+    max-width: 500px;
+    border-radius: 4px;
+    &::placeholder {
+      color: $gray-font;
+
+    }
+  }
+  textarea{
+    //border: 1px solid $inputBorder;
+    @include fo-go;
+    color: $black1;
+    background: #f3f3f3;
+    box-sizing: border-box;
+    padding:10px 20px;
+    display: block;
+    width: 100%;
+    resize: vertical;
+    max-width: 500px;
+    font-weight: normal !important;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    &::placeholder {
+      color: $gray-font;
+      font-weight: normal !important;
+    }
+  }
+
+  input[type="checkbox"]{
+    & + span {
+      padding-left: 40px;
+      position: relative;
+      margin-right: 40px;
+      text-decoration: underline;
+
+      &:after{
+        transition:background-color 0.3s;
+        @include content(20px, 20px, #fff);
+        @include trans-y;
+        left: 0;
+        border-radius: 3px;
+        border: 1px solid #dedede;
+      }
+      &:before {
+        transition:background-color 0.3s;
+        @include content(0, 0);
+        @include trans-y(45);
+        left: 0;
+      }
+    }
+
+    &:checked + span:after{
+      @include content(20px, 20px,$white);
+      @include tablet{
+        width: 20px;
+        height: 20px;
+      }
+    }
+    &:checked + span:before {
+      @include content(8px, 18px);
+      @include trans-y(45);
+      left: 6px;
+      border: none;
+      background: none;
+      border-bottom: 3px solid $color00;
+      border-right: 3px solid $color00;
+      border-radius: 0;
+      z-index: 1;
+      top: 5px;
+    }
+  }
+  input[type="checkbox"] {
+    & + span {
+      margin-right: 15px;
+      &:after {
+        background-color: #f3f3f3;
+      }
+    }
+    &:checked + .wpcf7-list-item-label:after {
+      background-color: #f3f3f3;
+    }
+  }
+  input[type="radio"] {
+    & + .wpcf7-list-item-label {
+      padding-left: 20px;
+      position: relative;
+
+      &:before {
+        transition: 0.3s;
+        @include content($radioSize, $radioSize, #fff);
+        @include trans-y;
+        left: 0;
+        border-radius: 50%;
+        border: 1px solid #111;
+      }
+
+      &:after {
+        @include content($radioSizeSmall, $radioSizeSmall, #fff);
+        left: 2px;
+        transition: 0.3s;
+        opacity: 0;
+        @include trans-y(0, 0);
+        border-radius: 50%;
+        z-index: 1;
+      }
+    }
+
+    &:checked + .wpcf7-list-item-label:after {
+      @include content($radioSizeSmall, $radioSizeSmall, $formItemsColor);
+      left: 3px;
+      @include trans-y(0, 1);
+      border-radius: 50%;
+      opacity: 1;
+      z-index: 1;
+    }
+
+  }
+
+  @include tablet {
+    //iPhoneコンテンツ拡大防止のため16px固定
+    input[type="text"],input[type="tel"],input[type="email"],
+    textarea,
+    select {
+    }
+  }
+}

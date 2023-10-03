@@ -1,0 +1,108 @@
+.l-topContact{
+  padding: 140px 0 20px;
+  position: relative;
+  color: $white;
+  text-align: center;
+  text-shadow: #000 1px 0 5px;
+  @include tablet{
+    padding: 100px 0 20px;
+  }
+  &:before{
+    @include content(100%,100%);
+    background: url(#{$dir}/common/bg_contact.jpg) center center no-repeat;
+    background-size: cover;
+    top:0;
+    left: 0;
+    z-index: 0;
+    filter: blur(8px);
+  }
+  &:after{
+    @include content(100%,100%);
+    background: rgba(#000,.65);
+    pointer-events: none;
+    box-sizing: border-box;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top:0;
+    @include tablet{
+      border-right: 0;
+    }
+  }
+  .c-inner{
+    z-index: 4;
+  }
+
+  &__ttl{
+    font-size: 3.2rem;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-bottom: 45px;
+    color: $white;
+    @include tablet{
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+    }
+  }
+
+
+
+  &__lead{
+    color: $white;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    @include tablet{
+      font-size: 1.6rem;
+    }
+  }
+  &__txt{
+    font-size: 1.6rem;
+    @include tablet{
+      font-size: 1.4rem;
+    }
+  }
+
+  &__box{
+    margin: 60px auto 100px;
+    @include flex;
+    justify-content: center;
+    gap: 50px;
+    @include tablet{
+      gap: 30px;
+      margin: 40px auto 40px;
+    }
+  }
+
+  &__boxItem{
+    width: calc(50% - 25px);
+    padding: 60px 0;
+
+    border-top: 1px solid $white;
+    border-bottom: 1px solid $white;
+
+    @include tablet{
+      width: 100%;
+      padding: 40px 0;
+    }
+
+    &__iconTtl{
+      margin: 10px 0 20px;
+      font-size: 1.8rem;
+    }
+    &__tel{
+      font-size: 3.0rem;
+      margin-top: 25px;
+      letter-spacing: 2px;
+    }
+    @include tablet{
+      &__btn{
+        img{
+          max-width: 250px;
+        }
+      }
+    }
+
+  }
+}

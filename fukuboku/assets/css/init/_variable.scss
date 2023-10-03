@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+//  ####################################
+//   option_module
+//   ※ projectの基本設定
+//  ####################################
+// googleFont
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&display=swap');
+//  ------------------------------------
+//   MediaScreen指定
+//  ------------------------------------
+$xl2: 1300px;
+$xl: 1200px; //site Size
+$l: 1020px; //inner Size
+$m: 768px; // tablet
+$s: 768px; // sp
+$xs: 480px; // iphone mini
+
+
+$breakpoint: (
+  pc: $xl,
+  tab: $l,
+  sp: $s,
+  se: $xs,
+);
+
+//  ------------------------------------
+//   ベースプロパティ
+//  ------------------------------------
+
+$bg-color: #ffffff;
+
+$bg-color1:#F3F1EF;
+$bg-color2:#2C2C2C;
+$bg-color3:#333333;
+$bg-color4:#222;
+
+$black: #333333;
+$black1: #757575;
+$color00: #FFC11A;
+$color01: #FA4712;
+$color02: #D50000;
+$color03: #eee;
+$white: #fff;
+$white2: #f2f2f2;
+$gray-font: #737373;
+$gray-light: rgba(235, 235, 235, 0.48);
+$gray: #E3E3E3;
+$gray-base: #F7F7F7;
+$base-gray:$gray-base;
+
+$base-black:#2e2e2e;
+$border-color: #777777;
+$border-gray:#9A9A9A;
+$border-gray2: #c4c4c4;
+
+
+
+$font-color: #333333;
+$line-height: 1.6;
+$a-color: #666;
+$basefont: 14px;
+
+
+//  ------------------------------------
+//   CSSからのIMGロード
+//  ------------------------------------
+$dir : "../img/";
+$font-dir : "../fonts/";
+
+
+//  ------------------------------------
+//   FONT指定
+//  ------------------------------------
+
+@mixin fo-min {
+  font-family: 'Zen Old Mincho',"ヒラギノ明朝 ProN W6", serif;
+  //ヒラギノ明朝
+  //font-family: 'Noto Serif JP',"ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+  //遊明朝
+  //font-family: "Yu Mincho", "YuMincho",'Sawarabi Mincho',"ヒラギノ明朝 ProN W6", "HiraMinProN-W6", serif;
+}
+
+//ゴシック
+@mixin fo-go {
+  //ヒラギノ角ゴ
+  //font-family: 'ヒラギノ角ゴシック', 'Hiragino Sans', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  //遊ゴシック
+  font-family: 'Zen Kaku Gothic New',sans-serif, 'Noto Sans JP',"游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ";
+  font-weight: 500;
+}
+@mixin fo-go2 {
+  //遊ゴシック
+  font-family:sans-serif,"游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  font-weight: 500;
+}
+
+//  webフォント
+@mixin web-font01 {
+  font-family: "acier-bat-solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin web-font02 {
+
+  //font-family:'Montserrat',"Gill Sans",gill-sans-nova,"Open Sans", serif;
+  //font-weight:800;
+  font-family:GalanoGrotesqueDEMO,"Open Sans", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+@mixin web-font03 {
+  //font-family: 'futura-condensed-bold', sans-serif;
+}
+
+//  ------------------------------------
+//   FORM設定
+//  ------------------------------------
+
+//RadioBox円形サイズ
+
+$radioSize: 12px;
+$radioSizeSmall: $radioSize - 4px;
+$formItemsColor: #333;
+$inputBorder: #ccc;
+$selectArrowColor: #333;
+
+
+
+//  ------------------------------------
+//   Responsive指定
+//  ------------------------------------
+
+// Sitesize
+
+@mixin siteSize {
+  @media screen and (max-width: $xl2) {
+    @content;
+  }
+}
+@mixin innerSize {
+  @media screen and (max-width: $xl) {
+    @content;
+  }
+}
+
+@mixin innerSizeSmall {
+  @media screen and (max-width: $m) {
+    @content;
+  }
+}
+// tablet
+@mixin tablet {
+  @media screen and (max-width: $m) {
+    @content;
+  }
+}
+
+// Sphone
+@mixin sphone {
+  @media screen and (max-width: $s) {
+    @content;
+  }
+}
+
+
+
+// 任意のサイズ
+@mixin queryDown($query) {
+  @media screen and (max-width: $query) {
+    @content;
+  }
+}
+
+@mixin queryUp($query) {
+  @media screen and (min-width: $query + 1px) {
+    @content;
+  }
+}

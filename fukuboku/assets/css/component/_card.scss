@@ -1,0 +1,89 @@
+.c-card{
+  width: 30%;
+  position: relative;
+  padding-bottom: 20px;
+  &.is-none a{
+    pointer-events: none;
+  }
+  &:after{
+    @include content(20px,3px,$color01);
+    bottom:0;
+    left: 0;
+    border-radius: 5px;
+  }
+  &__img{
+    //aspect-ratio: 10 / 11;
+    aspect-ratio: 370 / 591;
+    display: block;
+    margin-bottom: 30px;
+    position: relative;
+    &--over{
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      background: #f9f7f6;
+    }
+    &:hover{
+      img{
+        @include scale(1.1);
+      }
+    }
+    @include tablet{
+      margin-bottom: 20px;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .3s;
+    }
+
+  }
+  &.is-none{
+    img{
+      object-fit: contain;
+      object-position:center center;
+    }
+  }
+  &__detail{
+    &__title{
+      font-size: 1.6rem;
+      font-weight: bold;
+      transition: .3s opacity;
+      &:hover{
+        opacity: .6;
+      }
+    }
+
+    &__subTitle{
+      display: block;
+      font-size: 1.4rem;
+    }
+
+    &__dl{
+      @include flex;
+      gap: 10px;
+      align-items: flex-end;
+    }
+    &__dt{
+      font-size: 1.2rem;
+    }
+    &__dd{
+      font-weight: 600;
+    }
+  }
+
+  &__btnList{
+    @include flex;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  &__btns{
+    padding: 3px;
+    font-size: 1.2rem;
+    color: $white;
+    background: $black;
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,67 @@
+.c-btn{
+  border-radius: 5px;
+  color: $white;
+  background: $black;
+  line-height: 1;
+  font-size: 1.2rem;
+  padding: 8px 40px 8px 20px;
+  @include tablet{
+    padding: 8px 30px 8px 10px;
+  }
+  position: relative;
+  transition: .3s;
+  transition-property: color,background;
+
+  &:before{
+    @include content(8px,8px);
+    background: url(#{$dir}/common/arrow.svg) no-repeat center center;
+    background-size: contain;
+    @include trans-y();
+    right: 15px;
+    transition: .3s;
+    transition-property: background;
+    @include tablet{
+      right: 10px;
+    }
+  }
+  &:hover{
+    color: #111;
+    background: $color00;
+    &:before{
+      background: url(#{$dir}/common/arrow-bk.svg) no-repeat center center;
+      background-size: contain;
+    }
+  }
+
+  &.is-back{
+    background: $white;
+    color: #111;
+    padding: 13px 40px 15px 45px;
+    font-weight: 600;
+    transition: .3s;
+    transition-property: background;
+    letter-spacing: 2px;
+    &:before{
+      background: url(#{$dir}/common/arrow-bk.svg) no-repeat center center;
+      background-size: contain;
+      @include trans-y(180);
+      left: 10px;
+    }
+    &:hover{
+      background: $color00;
+    }
+  }
+
+  &.is-hidden{
+    background: $color00;
+    padding: 8px 20px;
+    color: #111;
+    pointer-events: none;
+    @include tablet{
+      padding: 8px 10px;
+    }
+    &:before{
+      content: none;
+    }
+  }
+}

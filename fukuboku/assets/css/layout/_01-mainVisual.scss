@@ -1,0 +1,33 @@
+.l-mainVisual{
+  background: url(#{$dir}/common/mv.jpg) center center no-repeat;
+  background-size: cover;
+  height: 800px;
+  position: relative;
+  @include tablet {
+    height: 140vw;
+  }
+
+  &:before{
+    @include content(100%,100%);
+    background: rgba(#000,.65);
+    pointer-events: none;
+    box-sizing: border-box;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top:0;
+    @include tablet{
+      border-right: 0;
+    }
+  }
+
+  &__logo{
+    position: absolute;
+    @include trans-xy();
+    z-index: 10;
+    width: 115px;
+    img{
+      width: 100%;
+    }
+  }
+}

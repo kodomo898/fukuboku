@@ -1,0 +1,6 @@
+.c-txt{
+  font-size: 1.6rem;
+  @include tablet{
+    font-size: 1.3rem;
+  }
+}

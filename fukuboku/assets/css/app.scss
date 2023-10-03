@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/* CSS Document */
+@import "./init/extend";
+
+/* Reset */
+@include reset;
+@import "./init/init";
+
+/* Component c-*/
+@import "./component/*";
+
+/* Module m-*/
+// 独立したレイアウト、minxinやoption以外の依存関係をできるだけなくす。
+@import "./module/*";
+
+/* Layout l-*/
+//
+@import "./layout/*";
+
+/* page p-*/
+@import "./page/*";
+
+// ページ単位の大枠、ページ単位で差分が出るときなどに使う。

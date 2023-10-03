@@ -1,0 +1,88 @@
+.l-topAbout{
+  background: url(#{$dir}/common/gold.jpg) center center no-repeat;
+  background-size: cover;
+  height: 750px;
+  @include tablet{
+    height: auto;
+  }
+  .c-inner{
+    height: 100%;
+  }
+  &__box{
+    background: $white;
+    height: 100%;
+    @include flex;
+    justify-content: center;
+    align-items: center;
+    @include tablet{
+      justify-content: flex-start;
+      align-items: initial;
+      padding: 40px 20px;
+    }
+  }
+
+  &__boxTxt{
+    writing-mode: vertical-rl;
+    @include tablet{
+      writing-mode: initial;
+    }
+  }
+
+  &__ttl{
+    font-size: 3.2rem;
+    position: relative;
+    display: inline-block;
+    margin-left: 55px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    @include tablet{
+      margin-left: 0;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+    }
+    &:before{
+      @include content(1px,80px,$black);
+      @include trans-x();
+      top: calc(100% + 30px);
+      @include tablet{
+        @include content(80px,1px,$black);
+        @include trans-none;
+        @include trans-y();
+        left: calc(100% + 30px);
+      }
+    }
+  }
+  &__txt{
+    font-size: 1.6rem;
+    line-height: 2;
+    letter-spacing: 2px;
+    color: #666666;
+    @include tablet{
+      letter-spacing: 0;
+      font-size: 1.4rem;
+    }
+  }
+  &__lead{
+    margin-left: 40px;
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+
+    @include tablet{
+      font-size: 2rem;
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__floatBg{
+    background: url(#{$dir}/common/bg.jpg) center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 420px;
+
+    @include tablet{
+      height: 80vw;
+      background-attachment: initial;
+    }
+  }
+}

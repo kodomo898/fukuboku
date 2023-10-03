@@ -1,0 +1,126 @@
+.c-edit{
+  h1{
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 1.8;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    @include tablet{
+      font-size: 3rem;
+    }
+  }
+  h2{
+    font-size: 2.4rem;
+    letter-spacing: 0;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    @include tablet{
+      margin-top: 60px;
+      font-size: 2rem;
+    }
+  }
+  h3{
+    font-size: 2rem;
+    letter-spacing: 0;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    @include tablet{
+      margin-top: 40px;
+      font-size: 1.8rem;
+    }
+  }
+  h4,h5,h6{
+    font-size: 1.8rem;
+    letter-spacing: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    @include tablet{
+      font-size: 1.6rem;
+    }
+  }
+
+  ul{
+    padding-left: 1.5em;
+    margin: 20px 0;
+    li{
+      list-style: disc;
+
+    }
+  }
+  ol{
+    padding-left: 2em;
+    margin: 20px 0;
+    li{
+      list-style: decimal-leading-zero;
+      &::marker{
+        @include web-font01;
+      }
+    }
+  }
+  a{
+    text-decoration: underline;
+    color: $color00;
+  }
+  p{
+    margin: 10px 0 10px;
+  }
+  table{
+    width: 100%;
+    th,td{
+      padding: 20px;
+      min-width: 100px;
+      @include tablet{
+        padding: 10px;
+      }
+    }
+    th,td{
+      border-right: 1px solid $black;
+      &:last-child{
+        border-right: none;
+      }
+    }
+    thead{
+      border-bottom: 1px solid $black;
+      font-weight: bold;
+    }
+    tfoot{
+      border-top: 1px solid $black;
+    }
+    tr{
+      border-bottom: 1px solid $black;
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+  }
+  figure{
+    margin: 40px 0 40px;
+    img{
+      border-radius: 10px !important;
+    }
+  }
+  strong{
+    font-weight: bold;
+  }
+  blockquote{
+    padding: 20px 30px;
+    position: relative;
+    margin-bottom: 20px;
+    background: #f1f1f1;
+    margin-top: 10px;
+    &:before{
+      content: '“';
+      font-size: 2.8rem;
+      position: absolute;
+      left: 10px;
+      top: -3px;
+    }
+    cite{
+      font-size: .8em;
+    }
+  }
+
+}

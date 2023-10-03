@@ -1,0 +1,19 @@
+
+.c-title{
+  font-size: 3.2rem;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin-bottom: 55px;
+  color: $white;
+  @include tablet{
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+  }
+  &:before{
+    @include content(80px,1px,$white);
+    @include trans-y();
+    left: calc(100% + 30px);
+  }
+}
